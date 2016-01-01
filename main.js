@@ -23,31 +23,3 @@ $(document).on('click', '.random', function() {
 });
 
 // apiKey: '6858557af251cb06f36753ca7bb72941' -- last.fm
-
-// Another approach
-// ----------
-// window.App = {
-//   // ----------
-//   init: function() {
-//     var self = this;
-
-//     var url = 'http://api.giphy.com';
-//     var path = '/v1/gifs/random';
-//     var tag = '&tag=funny+cat';
-//     var apiKey = '?api_key=dc6zaTOxFJmzC';
-
-//     $.ajax({
-//       url: this.url + this.path + this.apiKey + this.tag,
-//       success: function(result) {
-//         console.log('succes reaching', result);
-//         this._data = result.data;
-//         this._useData();
-//       }
-//     });
-//   },
-
-//   // ----------
-//   _useData: function() {
-//     $('.display').css('background-image', 'url(' + this._data.fixed_width_downsampled_url + ')');
-//   }
-// };
