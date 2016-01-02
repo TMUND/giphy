@@ -22,4 +22,14 @@ $(document).on('click', '.random', function() {
   location.reload(true);
 });
 
-// apiKey: '6858557af251cb06f36753ca7bb72941' -- last.fm
+// input field
+
+var currentTag = $('.textInput').val();
+
+$('.tag').html(currentTag);
+
+$('.textInput').on('keyup', function(){
+  $('.tag').html($('.textInput').val());
+});
+
+// change ajax call to match input tag
