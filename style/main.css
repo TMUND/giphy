@@ -2,28 +2,51 @@ body {
   background-color: #eee;
 }
 
-.welcome {
+.banner {
+  display: flex;
+  justify-content: center;
   width: 600px;
-  line-height: 3em;
-  margin-left: 32%;
-  margin-right: 50%;
-  margin-top: 20px;
-  font-size: 18px;
-  font-family: 'Source+Sans+Pro:600';
+  margin: 40px auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: 'Righteous';
   color: #333;
 }
 
+.welcome {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin: auto;
+  text-align: center;
+  line-height: 1em;
+  font-size: 18px;
+  font-family: 'Source+Sans+Pro:600';
+  color: #800;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin: 15px auto;
+  text-align: center;
+}
+
 .random {
-  height: 50px;
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 300px;
   background-color: #ccc;
-  border-radius: 15px;
-  margin-left: 45%;
-  margin-right: 50%;
-  margin-top: 20px;
+  border-radius: 10px;
+  margin: auto;
 }
 
 .display {
+  display: flex;
+  justify-content: center;
   height: 400px;
   width: 600px;
   margin: auto;

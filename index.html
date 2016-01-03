@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Giphy</title>
+    <title>Giphy API Practice</title>
     <link rel="stylesheet" type="text/css" href="lib/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' type='text/css'>
@@ -11,10 +11,12 @@
     <script src="lib/underscore-1.4.4.min.js"></script>
   </head>
   <body>
-    <div class="welcome">Welcome, currently displaying a random GIF tagged with "<span class="tag"></span>".
-      <input class="textInput" type="text" value="cat"/>
+    <div class="banner">Random Gif Generator</div>
+    <div class="welcome">Welcome! Currently displaying a random GIF tagged with "<span class="tag">funny+cat</span>".</div>
+    <div class="input">
+      <input class="textInput" type="text" value="funny+cat" maxlength="15"/>
     </div>
-    <button class="random">Random GIF Now!</button>
+    <button class="random">Generate a random GIF Now!</button>
     <div class="display"></div>
   </body>
 </html>

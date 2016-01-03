@@ -1,35 +1,86 @@
-var url = 'http://api.giphy.com';
-var path = '/v1/gifs/random';
-var tag = '&tag=funny+cat';
-var apiKey = '?api_key=dc6zaTOxFJmzC';
+(function() {
+  // ----------
+  window.App = {
+    // ----------
+    init: function() {
+      var self = this;
 
-var myData;
+      var currentText = $('.textInput').val();
 
-var useData = function() {
-  $('.display').css('background-image', 'url(' + myData.fixed_width_downsampled_url + ')');
-};
+      console.log(currentText);
 
-$.ajax({
-  url: this.url + this.path + this.apiKey + this.tag,
-  success: function(result) {
-    console.log('succes reaching', result);
-    myData = result.data;
-    useData();
-  }
-});
+      this._updateText();
 
-$(document).on('click', '.random', function() {
-  location.reload(true);
-});
+      apiCall = {
+        url: 'http://api.giphy.com',
+        path: '/v1/gifs/random',
+        tag: '&tag=',
+        currentTag: 'funny+cat',
+        apiKey: '?api_key=dc6zaTOxFJmzC'
+      };
 
-// input field
+      this._makeApiCall();
 
-var currentTag = $('.textInput').val();
+      $(document).on('click', '.random', function() {
+        self._makeUserApiCall();
+        // location.reload(true);
+      });
+    },
 
-$('.tag').html(currentTag);
+    // ----------
+    _makeApiCall: function() {
+      var self = this;
 
-$('.textInput').on('keyup', function(){
-  $('.tag').html($('.textInput').val());
-});
+      $.ajax({
+        url: apiCall.url + apiCall.path + apiCall.apiKey + apiCall.tag + apiCall.currentTag,
+        success: function(result) {
+          console.log('success reaching', result);
+          self._gif = result.data.image_original_url;
+          self._displayGif();
+          self._updateText();
+        }
+      });
+    },
 
-// change ajax call to match input tag
+    // ----------
+    _displayGif: function() {
+      $('.display').css('background-image', 'url(' + this._gif + ')');
+    },
+
+    // ----------
+    _makeUserApiCall: function() {
+      var self = this;
+
+
+      $.ajax({
+        url: apiCall.url + apiCall.path + apiCall.apiKey + apiCall.tag + this.currentText,
+        success: function(result) {
+          console.log('success reaching data for user input', result);
+          self._userGif = result.data.image_original_url;
+          self._displayUserGif();
+          self._updateText();
+        }
+      });
+    },
+
+    // ----------
+    _displayUserGif: function() {
+      $('.display').css('background-image', 'url(' + this._userGif + ')');
+    },
+
+    // ----------
+    _updateText: function() {
+      $('.tag').html(this.currentText);
+
+      $('.textInput').on('keyup', function(){
+        $('.tag').html($('.textInput').val());
+      });
+    }
+  };
+
+  // ----------
+  $(document).ready(function() {
+    App.init();
+  });
+
+})();
