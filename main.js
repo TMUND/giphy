@@ -5,13 +5,7 @@
     init: function() {
       var self = this;
 
-      var currentText = $('.textInput').val();
-
-      console.log(currentText);
-
-      this._updateText();
-
-      apiCall = {
+      this.apiCall = {
         url: 'http://api.giphy.com',
         path: '/v1/gifs/random',
         tag: '&tag=',
@@ -20,10 +14,11 @@
       };
 
       this._makeApiCall();
+      this._updateText();
 
       $(document).on('click', '.random', function() {
+        self._updateText();
         self._makeUserApiCall();
-        // location.reload(true);
       });
     },
 
@@ -32,12 +27,11 @@
       var self = this;
 
       $.ajax({
-        url: apiCall.url + apiCall.path + apiCall.apiKey + apiCall.tag + apiCall.currentTag,
+        url: this.apiCall.url + this.apiCall.path + this.apiCall.apiKey + this.apiCall.tag + this.apiCall.currentTag,
         success: function(result) {
-          console.log('success reaching', result);
+          console.log('success making initial call', result);
           self._gif = result.data.image_original_url;
           self._displayGif();
-          self._updateText();
         }
       });
     },
@@ -51,14 +45,15 @@
     _makeUserApiCall: function() {
       var self = this;
 
+      this._updateText();
+      this.currentText = $('.textInput').val();
 
       $.ajax({
-        url: apiCall.url + apiCall.path + apiCall.apiKey + apiCall.tag + this.currentText,
+        url: this.apiCall.url + this.apiCall.path + this.apiCall.apiKey + this.apiCall.tag + this.currentText,
         success: function(result) {
-          console.log('success reaching data for user input', result);
+          console.log('success making user call', result);
           self._userGif = result.data.image_original_url;
           self._displayUserGif();
-          self._updateText();
         }
       });
     },
@@ -70,7 +65,7 @@
 
     // ----------
     _updateText: function() {
-      $('.tag').html(this.currentText);
+      // $('.tag').html(this.currentText);
 
       $('.textInput').on('keyup', function(){
         $('.tag').html($('.textInput').val());
