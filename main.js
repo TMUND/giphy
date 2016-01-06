@@ -45,7 +45,6 @@
     _makeUserApiCall: function() {
       var self = this;
 
-      this._updateText();
       this.currentText = $('.textInput').val();
 
       $.ajax({
@@ -65,10 +64,14 @@
 
     // ----------
     _updateText: function() {
-      // $('.tag').html(this.currentText);
+      var self = this;
 
-      $('.textInput').on('keyup', function(){
+      $('.textInput').on('keyup', function(event) {
         $('.tag').html($('.textInput').val());
+
+        if (event.which === 13) {
+          self._makeUserApiCall();
+        }
       });
     }
   };
