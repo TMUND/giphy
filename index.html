@@ -7,17 +7,29 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poppins:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700|Patrick+Hand|Coda' rel='stylesheet' type='text/css'>
     <script src="lib/jquery-1.9.1.min.js"></script>
     <script src="lib/underscore-1.4.4.min.js"></script>
   </head>
   <body>
-    <div class="banner">Random Gif Generator</div>
-    <div class="welcome">Welcome! Currently displaying a random GIF tagged with "<span class="tag">funny+cat</span>".</div>
-    <div class="input">
-      <input class="textInput" type="text" value="funny+cat" maxlength="15"/>
+    <div class="content">
+      <div class="banner">Random Gif Generator</div>
+      <div class="welcome">
+        <p>Currently displaying a random GIF tagged with "<span class="tag" style="color:maroon">funny cat</span>". To update tag...</p>
+        <ol class="instructions">
+          <li>Enter subject tag into text box.</li>
+          <li>Click on "generate" button or hit ENTER key.</li>
+          <li>???...</li>
+          <li>Profit!</li>
+        </ol>
+      </div>
+      <div class="input">
+        <input class="textInput" type="text" value="funny cat" maxlength="15"/>
+      </div>
+      <button class="random">Generate</button>
+      <div class="display"></div>
     </div>
-    <button class="random">Generate a random GIF Now!</button>
-    <div class="display"></div>
   </body>
 </html>
 
