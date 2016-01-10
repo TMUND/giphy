@@ -1,5 +1,10 @@
 body {
   background-color: #121621;
+  overflow: hidden;
+}
+
+a:focus {
+  outline: 0;
 }
 
 .content {
@@ -68,9 +73,45 @@ body {
   width: 600px;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 10px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center top;
+}
+
+.contact {
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.contact-link {
+  font-size: 15px;
+  color: #121621;
+  text-decoration: none;
+  border-bottom: 1px dotted #121621;
+}
+
+.contact-link:hover {
+  color: white;
+}
+
+.row {
+  padding-bottom: 10px;
+}
+
+#age {
+  width: 35px;
+}
+
+#login-form.modal {
+  padding: 25px 30px;
+}
+
+button, input, textarea {
+  margin-top: 5px;
 }
 
 /* font-family: 'Playfair Display SC', serif; */
