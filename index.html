@@ -4,12 +4,15 @@
     <title>Giphy API Practice</title>
     <link rel="stylesheet" type="text/css" href="lib/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" href="style/jquery.modal.css" type="text/css" media="screen" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poppins:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
-
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700|Patrick+Hand|Coda' rel='stylesheet' type='text/css'>
+
+
     <script src="lib/jquery-1.9.1.min.js"></script>
+    <script src="lib/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="lib/underscore-1.4.4.min.js"></script>
   </head>
   <body>
@@ -29,7 +32,32 @@
       </div>
       <button class="random">Generate</button>
       <div class="display"></div>
+      <div class="contact">
+        <a href="#login-form" rel="modal:open" rel="modal:close" class="contact-link">Contact</a>
+      </div>
     </div>
+
+    <form id="login-form" class="modal">
+      <div class="row">
+        <label for="name">Name:</label><br />
+        <input id="name" class="form-input" name="name" type="text" placeholder="first and last name" size="30" required /><br />
+        <label class="warning">
+      </div>
+      <div class="row">
+        <label for="email">Email:</label><br />
+        <input id="email" class="form-input" name="email" type="email" placeholder="Enter a valid email address" size="30" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required /><br />
+      </div>
+      <div class="row">
+        <label for="age">Age:</label><br />
+        <input id="age" type="number" name="age" min="18" max="99" value="21"><br />
+      </div>
+      <div class="row">
+        <label for="message">Message:</label><br />
+        <textarea id="message" class="form-input" name="message" rows="7" cols="50" placeholder="Your message" required></textarea><br />
+      </div>
+      <input id="submit-button" type="submit" value="Send Email" />
+    </form>
+
   </body>
 </html>
 

@@ -22,6 +22,15 @@
         var userInputTag = $('.textInput').val();
         self._makeApiCall(userInputTag);
       });
+
+      $('.contact-link').click(function(event) {
+        $(this).modal({
+          fadeDuration: 250,
+          fadeDelay: 1.5
+        });
+
+        return false;
+      });
     },
 
     // ----------
