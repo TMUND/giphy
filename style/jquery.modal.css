@@ -18,7 +18,7 @@
   margin-right: -0.05em;
 }
 .modal {
-  display: inline-block !important;
+  display: inline-block;
   vertical-align: middle;
   position: relative;
   z-index: 2;

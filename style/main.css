@@ -1,6 +1,5 @@
 body {
   background-color: #121621;
-  overflow: hidden;
 }
 
 a:focus {
@@ -108,6 +107,7 @@ a:focus {
 
 #login-form.modal {
   padding: 25px 30px;
+  display: none;
 }
 
 button, input, textarea {
