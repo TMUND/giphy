@@ -5,6 +5,24 @@
     init: function() {
       var self = this;
 
+      $(window).load(function(event){
+        $('.contact-button').on('click',function(event) {
+           $('.content').css('opacity', 0.1).fadeIn(600, function () {
+              $('#login-form').css({'display':'inline','z-index':9999});
+           });
+         event.preventDefault();
+         });
+      });
+
+      $(document).mouseup(function (event) {
+        var $container = $('#login-form');
+
+        if (!$container.is(event.target) && $container.has(event.target).length === 0) {
+          $('.content').css('opacity', 1);
+          $container.hide();
+        }
+      });
+
       var currentTag = 'funny+cat';
 
       $('.textInput').on('keyup', function(event) {

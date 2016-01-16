@@ -4,7 +4,6 @@
     <title>Giphy API Practice</title>
     <link rel="stylesheet" type="text/css" href="lib/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
-    <link rel="stylesheet" href="style/jquery.modal.css" type="text/css" media="screen" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poppins:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
@@ -12,7 +11,6 @@
 
 
     <script src="lib/jquery-1.9.1.min.js"></script>
-    <script src="lib/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="lib/underscore-1.4.4.min.js"></script>
   </head>
   <body>
@@ -33,11 +31,11 @@
       <button class="random">Generate</button>
       <div class="display"></div>
       <div class="contact">
-        <a href="#login-form" rel="modal:open" rel="modal:close" class="contact-link">Contact</a>
+        <a href="#login-form" class="contact-button">Contact</a>
       </div>
     </div>
 
-    <form id="login-form" class="modal">
+    <form id="login-form" class="modal" action="MAILTO:mundert@gmail.com" method="post" enctype="text/plain">
       <div class="row">
         <label for="name">Name:</label><br />
         <input id="name" class="form-input" name="name" type="text" placeholder="first and last name" size="30" required /><br />
